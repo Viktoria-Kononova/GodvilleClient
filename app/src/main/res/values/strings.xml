@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Godville</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="loading">Введите имя бога для загрузки информации</string>
+    <string name="enter_god_name">Введите имя Бога</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="god_name">Имя бога:</string>
+    <string name="hero_name">Имя героя:</string>
+    <string name="hero_character">Характер:</string>
+    <string name="motto">Девиз:</string>
+    <string name="clan">Гильдия:</string>
+    <string name="clan_position">Звание:</string>
+    <string name="level">Уровень:</string>
+    <string name="health">Здоровье:</string>
+    <string name="pet_name">Питомец:</string>
+    <string name="pet_level">Уровень питомца:</string>
+    <color name="bg">#F5DEB3</color>
+</resources>

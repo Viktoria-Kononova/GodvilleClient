@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.00">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_hero"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewHero"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="5"
+                    android:textStyle="italic"
+                    android:textSize="@dimen/abc_dialog_padding_material" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_clan"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/textViewClan"
+                    android:textStyle="italic"
+                    android:layout_weight="5"
+                    android:textSize="@dimen/abc_dialog_padding_material" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_heart1"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/textViewHealth"
+                    android:textStyle="italic"
+                    android:layout_weight="5"
+                    android:textSize="@dimen/abc_dialog_padding_material" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+               <ImageView
+                   android:layout_width="64dp"
+                   android:layout_height="64dp"
+                   android:layout_margin="10dp"
+                   android:src="@drawable/ic_pet" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewPet"
+                    android:layout_gravity="center_vertical"
+                    android:textStyle="italic"
+                    android:layout_weight="5"
+                    android:textSize="@dimen/abc_dialog_padding_material" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_diary" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewDiary"
+                    android:layout_gravity="center_vertical"
+                    android:textStyle="italic"
+                    android:layout_weight="5"
+                    android:textSize="@dimen/abc_dialog_padding_material" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <EditText
+        android:layout_width="414dp"
+        android:layout_height="68dp"
+        android:hint="@string/enter_god_name"
+        android:id="@+id/editTextGodName" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/confirm"
+        android:id="@+id/buttonConfirm" />
+
+
+</LinearLayout>
