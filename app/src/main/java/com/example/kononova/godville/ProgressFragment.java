@@ -28,17 +28,15 @@ import java.net.URLEncoder;
 
 public class ProgressFragment extends Fragment implements View.OnClickListener {
 
-    TextView heroTextView;
-    TextView clanTextView;
-    TextView healthTextView;
-    TextView petTextView;
-    TextView diaryTextView;
+    private TextView heroTextView;
+    private TextView clanTextView;
+    private TextView healthTextView;
+    private TextView petTextView;
+    private TextView diaryTextView;
 
-    String contentText = null;
-    EditText godNameEditText;
-    Button confirmButton;
-    String godName;
-    IGetter getter;
+    private String contentText = null;
+    private EditText godNameEditText;
+    private IGetter getter;
 
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -53,14 +51,14 @@ public class ProgressFragment extends Fragment implements View.OnClickListener {
         diaryTextView = (TextView)view.findViewById(R.id.textViewDiary);
 
         godNameEditText =(EditText)view.findViewById(R.id.editTextGodName);
-        confirmButton = (Button)view.findViewById(R.id.buttonConfirm);
+        Button confirmButton = (Button)view.findViewById(R.id.buttonConfirm);
         confirmButton.setOnClickListener(this);
         return view;
     }
 
     @Override
     public void onClick(View view) {
-        godName = godNameEditText.getText().toString();
+        String godName = godNameEditText.getText().toString();
         Utils.hideKeyboard(getContext(), view);
         new ProgressTask(godName).execute();
     }
@@ -72,7 +70,6 @@ public class ProgressFragment extends Fragment implements View.OnClickListener {
         @Override
         protected String doInBackground(String... path){
             String content;
-            //String godvillePath = "http://godville.net/gods/api/Talan.json";
             try{
                 content = getter.getContent(godvillePath);
             }
@@ -99,10 +96,10 @@ public class ProgressFragment extends Fragment implements View.OnClickListener {
         protected void onPostExecute(String content){
             contentText = content;
             if (content == null){
-                Toast.makeText(getActivity(), "Проверьте наличие интернет-соединения и правильность имени Бога", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), getResources().getString(R.string.check), Toast.LENGTH_LONG).show();
                 return;
             }
-            Toast.makeText(getActivity(),"Данные загружены" , Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(),getResources().getString(R.string.data_loaded) , Toast.LENGTH_SHORT).show();
             JsonObject heroJsonObject = null;
             try {
                 heroJsonObject = new JsonParser().parse(content).getAsJsonObject();
@@ -127,14 +124,14 @@ public class ProgressFragment extends Fragment implements View.OnClickListener {
                 JsonObject petJsonObject = heroJsonObject.get("pet").getAsJsonObject();
                 String heroPet = petJsonObject.get("pet_name").getAsString();
                 JsonElement level = petJsonObject.get("pet_level");
-                String heroPetLevel = "контужен";
-                if (level!=null) {
-                    heroPetLevel = level.getAsString() + " уровень";
+                String heroPetLevel = getResources().getString(R.string.pet_dead);
+                if (level!=null && !level.getAsString().isEmpty()) {
+                    heroPetLevel = level.getAsString() + " " + getResources().getString(R.string.level_line);
                 }
 
-                heroTextView.setText(heroName + "\n" + heroLevel + " уровень" + "\n" + heroCharacter + "\n" + heroMotto);
+                heroTextView.setText(heroName + "\n" + heroLevel + " " + getResources().getString(R.string.level_line) + "\n" + heroCharacter + "\n" + heroMotto);
                 clanTextView.setText(heroClan + "\n" + "(" + heroClanPosition + ")");
-                healthTextView.setText(heroHealth + "/" + heroMaxHealth + " ед. здоровья");
+                healthTextView.setText(heroHealth + "/" + heroMaxHealth + " " + getResources().getString(R.string.health_points));
                 petTextView.setText(heroPet + "\n" + heroPetLevel);
                 diaryTextView.setText(heroDiary);
 

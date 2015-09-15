@@ -3,7 +3,8 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="loading">Введите имя бога для загрузки информации</string>
+    <string name="check">Проверьте наличие интернет-соединения и правильность имени Бога</string>
+    <string name="data_loaded">Данные загружены</string>
     <string name="enter_god_name">Введите имя Бога</string>
     <string name="confirm">Подтвердить</string>
     <string name="god_name">Имя бога:</string>
@@ -16,5 +17,9 @@
     <string name="health">Здоровье:</string>
     <string name="pet_name">Питомец:</string>
     <string name="pet_level">Уровень питомца:</string>
+    <string name="pet_dead">контужен</string>
+    <string name="level_line">уровень</string>
+    <string name="health_points">ед. здоровья</string>
+    
     <color name="bg">#F5DEB3</color>
 </resources>
